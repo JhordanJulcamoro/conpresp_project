@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CONPRESP</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+      integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body>
+    <div class="container p-5">
+      <h2 class="text-center">BEM-VINDO TO CONPRESP</h2>
+      <form id="loginForm">
+        <div class="form-signin">
+          <label>Email:</label>
+          <input
+            type="email"
+            class="form-control"
+            id="inputEmail"
+            aria-describedby="emailHelp"
+            placeholder="Digite seu email"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label>Senha: </label>
+          <input
+            type="password"
+            class="form-control"
+            id="inputPassword"
+            placeholder="Digite sua senha"
+            required
+          />
+        </div>
+        <div class="container">
+          <a href="#" data-toggle="modal" data-target="#resetPasswordModal"
+            >Esqueceu a senha?</a
+          >
+        </div>
+        <button type="submit" class="btn btn-primary">Login</button>
+      </form>
+
+      <!-- <button
+        class="btn btn-info"
+        data-toggle="modal"
+        data-target="#verificarEmailModal"
+      >
+        verificar email
+      </button> -->
+    </div>
+
+    <!-- Modal Esqueci Senha-->
+    <div
+      class="modal fade"
+      id="resetPasswordModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3>Esqueci a Senha</h3>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>
+              Iremos enviar-lhe um link de recuperação de senha para o seu
+              email, após clicar no botão, verifique a sua caixa de entrada do
+              email.
+            </p>
+            <form id="resetpasswordForm">
+              <div class="form-group">
+                <input
+                  type="email"
+                  id="resetpasswordEmail"
+                  class="form-control"
+                  placeholder="Email"
+                  required
+                />
+              </div>
+              <button type="submit" class="btn btn-primary">
+                Reset Password
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal Verificar Email-->
+    <div
+      class="modal fade"
+      id="verificarEmailModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3>Verificar Email</h3>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>
+              Lhe enviamos um e-mail para
+              <strong>user.email</strong>
+              com um link de confimação para que possa realizar a validação,
+              verifique sua conta e clique no link.
+            </p>
+            <p>Se a verificação não chegou, clique no próximo botão.</p>
+          </div>
+          <button type="submit" class="btn btn-primary" id="btnVerificarEmail">
+            Enviar novo link de verificação
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- BOOSTRAP SCRIPTS -->
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- FIREBASE SCRIPTS -->
+    <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-functions.js"></script>
+
+    <!-- FILE APP SCRIPTS -->
+    <script src="js/global/declarations.js"></script>
+    <script src="js/config/firebase.config.js"></script>
+
+    <script src="js/services/auth.service.js"></script>
+    <script src="js/utils/login.js"></script>
+  </body>
+</html>

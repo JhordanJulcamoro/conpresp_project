@@ -10,10 +10,86 @@
       integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
       crossorigin="anonymous"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
   </head>
   <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <img
+            src="img/login.svg"
+            width="30"
+            height="30"
+            class="d-inline-block align-top"
+            alt=""
+            loading="lazy"
+          />
+          CONPRESP
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+      <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              id="navbarDropdown"
+              role="button"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              <i class="fa fa-fw fa-user"> </i>
+            </a>
+            <div
+              class="dropdown-menu dropdown-menu-right"
+              aria-labelledby="navbarDropdown "
+            >
+              <a class="dropdown-item" href="configuracion.html"
+                >Configurações</a
+              >
+              <a class="dropdown-item" href="usuarios.html" id="btnAddUsuario"
+                >Adicionar usuarios</a
+              >
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#" id="btnLogout">Cerrar Sesión</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
     <div class="container p-5">
       <h4 class="text-center">BEM-VINDO: <span> USUARIO</span></h4>
+      <div class="col-sm-12 text-center">
+        <button type="button" class="btn btn-warning" id="btnRegistro">
+          REGISTRAR
+        </button>
+        <button type="button" class="btn btn-info" id="btnEditar">
+          ALTERAR
+        </button>
+        <button type="button" class="btn btn-danger" id="btnDeletar">
+          EXCLUIR
+        </button>
+        <button type="button" class="btn btn-dark" id="btnPesquisar">
+          PESQUISAR
+        </button>
+        <!-- <button class="btn btn-dark" id="btnRegistrar">Registrar</button> -->
+      </div>
     </div>
 
     <!-- BOOSTRAP SCRIPTS -->
@@ -28,7 +104,17 @@
       crossorigin="anonymous"
     ></script>
 
+    <!-- FIREBASE SCRIPTS -->
+    <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-functions.js"></script>
+
     <!-- FILE APP SCRIPTS -->
-    <script src=""></script>
+    <script src="js/config/firebase.config.js"></script>
+    <script src="js/services/auth.loged.js"></script>
+    <script src="js/global/declarations.js"></script>
+    <script src="js/services/auth.service.js"></script>
+    <script src="js/utils/home.js"></script>
   </body>
 </html>
