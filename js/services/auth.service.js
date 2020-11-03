@@ -1,79 +1,72 @@
-function loginUsuario(email, password) {
-  auth
-    .signInWithEmailAndPassword(email, password)
-    .then((userCredential) => {
-      window.location.replace("home.html");
-    })
-    .catch((error) => {
-      alert("Ocurrió el siguiente error: " + error.message);
-    });
+// auth.onAuthStateChanged((user) => {
+//   if (user) {
+//     const userDB = getUserCollectionDB(user.uid);
+//     setUserName(user.displayNome, userDB.nome);
+//   } else {
+//     window.location = "login.html";
+//   }
+// });
+
+function getLoginFormInfo() {
+  const email = document.querySelector("#inputEmail").value;
+  const password = document.querySelector("#inputPassword").value;
+  return { email, password };
 }
 
-function logoutUsuario() {
-  auth
-    .signOut()
-    .then(function () {
-      // alert("Cerrando sesión");
-      window.location.replace("login.html");
-    })
-    .catch(function (error) {
-      alert(error);
-    });
+async function login(email, password) {
+  return await auth.signInWithEmailAndPassword(email, password);
 }
 
-function resetPassword(email) {
-  auth
-    .sendPasswordResetEmail(email)
-    .then(function () {
-      //cerrando modal
-      $("#resetPasswordModal").modal("hide");
-      console.log("se envió el mensaje de reset");
-    })
-    .catch(function (error) {
-      alert(error);
-    });
+async function resetPassword(email) {
+  return await auth.sendPasswordResetEmail(email);
 }
 
-// REGISTRAR UN USUARIO
-async function cadastrarUsuario(user) {
+function getRestPasswordInfo() {
+  const email = document.querySelector("#resetpasswordEmail").value;
+  return email;
+}
+
+async function logout() {
+  return await auth.signOut();
+}
+
+function getCadastroFormInfo() {
+  const nome = document.querySelector("#agregarUsuarioName").value;
+  const sobrenome = document.querySelector("#agregarUsuarioSobrenome").value;
+  const email = document.querySelector("#agregarUsuarioEmail").value;
+  const password = document.querySelector("#agregarUsuarioPassword").value;
+  const select = document.getElementById("agregarUsuarioSelect");
+  const tipoUsuario = select.options[select.selectedIndex].value;
+
+  const usuario = {
+    nome: nome,
+    sobrenome: sobrenome,
+    email: email,
+    password: password,
+    tipoUsuario: tipoUsuario,
+    estadoUsario: true,
+  };
+
+  return usuario;
+}
+
+async function cadastro(usuario) {
   const creds = await auth.createUserWithEmailAndPassword(
-    user.email,
-    user.password
+    usuario.email,
+    usuario.password
   );
-  await enviarVerificacaoEmail();
+
   return db.collection("users").doc(creds.user.uid).set({
-    name: user.name,
-    email: user.email,
-    tipoUsuario: user.tipoUsuario,
-    estadoUsario: user.estadoUsario,
+    nome: usuario.nome,
+    sobrenome: usuario.sobrenome,
+    email: usuario.email,
+    tipoUsuario: usuario.tipoUsuario,
+    estadoUsario: usuario.estadoUsario,
+    emailVerified: creds.user.emailVerified,
   });
 }
 
-function enviarVerificacaoEmail() {
-  try {
-    return auth.currentUser.sendEmailVerification();
-  } catch (error) {
-    alert(error);
-  }
-}
-
-function eEmailVerificado() {}
-
-// function actualizarDataFireStore(usuario) {
-//   fs.collection("users")
-//     .add({
-//       nomes: usuario.nomes, //string
-//       sobrenomes: usuario.sobrenomes, //string
-//       email: usuario.email, //string
-//       password: usuario.password, //string
-//       nivelUsuario: usuario.nivelUsuario, //int (1-Global,2-Usuario medio,3-Usuario general)
-//       estadoUsuario: usuario.estadoUsuario, //Boolean (true-activo,false-inactivo)
-//       fotoUsuario: usuario.fotoUsuario,
-//     })
-//     .then(function (docRef) {
-//       console.log("Document written with ID: ", docRef.id);
-//     })
-//     .catch(function (error) {
-//       console.error("Error adding document: ", error);
-//     });
+// async function getUserCollectionDB(uid) {
+//   const userCollection = (await db.collection("users").doc(uid).get()).data();
+//   return userCollection;
 // }

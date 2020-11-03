@@ -1,6 +1,6 @@
-btnLogout.addEventListener("click", (e) => {
-  e.preventDefault();
-  logoutUsuario();
+logoutButton.addEventListener("click", async (event) => {
+  event.preventDefault();
+  await logout();
 });
 
 // const btnRegistrar = document.querySelector("#btnRegistrar");
