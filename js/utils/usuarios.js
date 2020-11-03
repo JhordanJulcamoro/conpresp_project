@@ -1,18 +1,12 @@
-// agregarUsuarioForm.addEventListener("submit", (e) => {
-//   e.preventDefault();
-
-//   try {
-//     cadastrarUsuario(user);
-//     //limpiando modal
-//     document.getElementById("agregarUsuarioForm").reset();
-//     // agregarUsuarioForm.reset();
-//     //cerrando modal
-//     $("#agregarUsuarioModal").modal("hide");
-//     console.log("se registró");
-//   } catch (error) {
-//     alert(error.message);
-//   }
-// });
+window.onload = function () {
+  console.log("Pagina cargada");
+  db.collection("users").onSnapshot(
+    (snapshot) => {
+      getUsersData(snapshot.docs);
+    },
+    (err) => {}
+  );
+};
 
 agregarUsuarioForm.addEventListener("submit", async (event) => {
   event.preventDefault();

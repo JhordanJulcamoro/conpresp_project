@@ -70,3 +70,22 @@ async function cadastro(usuario) {
 //   const userCollection = (await db.collection("users").doc(uid).get()).data();
 //   return userCollection;
 // }
+
+async function getUsersData(users) {
+  let html = "";
+  users.forEach((doc) => {
+    const users = doc.data();
+    const tr = `<tr>
+    <th scope="row">1</th>
+    <td>${users.email}</td>
+    <td>${users.nome}</td>
+    <td>${users.tipoUsuario}</td>
+    <td>${users.estadoUsario}</td>
+    <td><a href="">editar</a>|<a href="">eliminar</a></td>
+  </tr>
+    `;
+    html += tr;
+  });
+  const usersTR = document.querySelector(".usersData");
+  usersTR.innerHTML = html;
+}
