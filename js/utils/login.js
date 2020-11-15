@@ -11,7 +11,7 @@ resetPasswordForm.addEventListener("submit", (e) => {
   resetPassword(email);
 });
 
-btnVerificarEmail.addEventListener("click", (e) => {
-  e.preventDefault();
-  console.log("envio de confimacion al email");
-});
+// btnVerificarEmail.addEventListener("click", (e) => {
+//   e.preventDefault();
+//   console.log("envio de confimacion al email");
+// });
