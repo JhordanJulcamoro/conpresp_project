@@ -22,9 +22,9 @@ body {
   height: 10em;
   width: 10em;
 }
-.bg-dark-x {
-  /* background-color: var(--dark) !important; */
-}
+/* .bg-dark-x {
+   background-color: var(--dark) !important; 
+} */
 
 h2 {
   margin-top: auto;

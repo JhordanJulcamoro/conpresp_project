@@ -1,0 +1,57 @@
+:root {
+  --dark: #0e2033ec;
+  --darkblue: #2c3d51;
+  --darkgreen: #1ca896;
+  --darkgreenhover: #5bcebf;
+  --light: #ffffff;
+  --darkgray: rgb(133 135 150);
+  --dark: #050f1aec;
+  --gray: #353a41ec;
+  --blue: #0b3d80ec;
+  --green: #1c8072d5;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  color: var(--light);
+  background-color: var(--darkgray);
+}
+
+.bg-darkblue {
+  background-color: var(--darkblue) !important;
+}
+.bg-gray {
+  background-color: var(--gray) !important;
+}
+.bg-blue {
+  background-color: var(--blue) !important;
+}
+.bg-darkblue {
+  background-color: var(--darkblue) !important;
+}
+.bg-green {
+  background-color: var(--green) !important;
+}
+.bg-darkgreen {
+  background-color: var(--darkgreen) !important;
+}
+.bg-gray-icon {
+  color: var(--darkgray) !important;
+  margin: 5px;
+}
+.bg-darkgreen-icon {
+  color: var(--darkgreen) !important;
+}
+
+.dropdown-item:hover {
+  background-color: var(--dark);
+  color: var(--darkgray);
+}
+.text-body {
+  color: var(--dark);
+}
+
+.font-hover:hover {
+  background-color: var(--green);
+}
