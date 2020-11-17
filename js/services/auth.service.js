@@ -6,6 +6,9 @@ function loginUsuario(email, password) {
     })
     .catch((error) => {
       alert("Ocurrió el siguiente error: " + error.message);
+      $(".loading-icon").addClass("d-none");
+      $(".button").attr("disabled", false);
+      $(".btn-txt").text("Iniciar sessão");
     });
 }
 
