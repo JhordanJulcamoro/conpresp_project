@@ -16,7 +16,6 @@ function logoutUsuario() {
   auth
     .signOut()
     .then(function () {
-      // alert("Cerrando sesión");
       window.location.replace("login.html");
     })
     .catch(function (error) {
@@ -28,7 +27,6 @@ function resetPassword(email) {
   auth
     .sendPasswordResetEmail(email)
     .then(function () {
-      //cerrando modal
       $("#resetPasswordModal").modal("hide");
       console.log("se envió el mensaje de reset");
     })
@@ -37,7 +35,6 @@ function resetPassword(email) {
     });
 }
 
-// REGISTRAR UN USUARIO
 async function cadastrarUsuario(user) {
   const creds = await auth.createUserWithEmailAndPassword(
     user.email,
@@ -60,7 +57,23 @@ function enviarVerificacaoEmail() {
   }
 }
 
-function eEmailVerificado() {}
+function listarDatosTabla() {
+  db.collection(name_table_db)
+    .get()
+    .then((snapshot) => {
+      snapshot.docs.forEach((doc) => {
+        var coleccionData = doc.data();
+        dataSet = [
+          doc.id,
+          coleccionData.CONPRESP,
+          coleccionData.DENOMINACIONES,
+          coleccionData.PRESERVACAO,
+          coleccionData.CONSERVACAO,
+        ];
+        table.rows.add([dataSet]).draw();
+      });
+    });
+}
 
 // function actualizarDataFireStore(usuario) {
 //   fs.collection("users")
