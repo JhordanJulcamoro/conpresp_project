@@ -4,7 +4,8 @@
     <meta charset="utf-8" />
     <meta
       name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+      content="width=device-width, initial-scale=1,
+    shrink-to-fit=no"
     />
 
     <!-- Bootstrap CSS -->
@@ -14,6 +15,12 @@
       integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
       crossorigin="anonymous"
     />
+    <!-- DataTable -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css"
+    />
+
     <link rel="stylesheet" href="css/home.css" />
     <script
       src="https://kit.fontawesome.com/5e195b88df.js"
@@ -64,7 +71,12 @@
                 class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                 aria-labelledby="userDropdown"
               >
-                <a class="dropdown-item" href="#">
+                <a
+                  class="dropdown-item"
+                  href="#"
+                  data-toggle="modal"
+                  data-target="#usuario-modal"
+                >
                   <i
                     class="fas fa-user fa-sm fa-fw mr-2 text-gray-400 bg-darkgreen-icon"
                   ></i>
@@ -85,7 +97,7 @@
                   <i
                     class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400 bg-darkgreen-icon"
                   ></i>
-                  Logout
+                  Sair
                 </a>
               </div>
             </li>
@@ -119,16 +131,6 @@
           </li>
           <li class="nav-item font-hover">
             <a class="nav-link" href="#"
-              ><i class="fas fa-folder bg-gray-icon"></i>Fichas</a
-            >
-          </li>
-          <li class="nav-item font-hover">
-            <a class="nav-link" href="#"
-              ><i class="fas fa-file bg-gray-icon"></i>Relatórios</a
-            >
-          </li>
-          <li class="nav-item font-hover">
-            <a class="nav-link" href="#"
               ><i class="fas fa-users bg-gray-icon"></i>Usuários</a
             >
           </li>
@@ -139,7 +141,7 @@
     <div class="container mt-4">
       <div class="container-fluid">
         <!-- Content Row -->
-        <div class="row h-100">
+        <div class="row h-100 d-flex justify-content-center">
           <!-- Earnings (Monthly) Card Example -->
           <!-- <div class="col-xl-3 col-md-6 mb-4">
             <div class="card border-left-primary shadow h-100 py-2 bg-darkblue">
@@ -159,7 +161,7 @@
             </div>
           </div> -->
 
-          <div class="col-xl-3 col-md-6 mb-4">
+          <div class="col-xl-4 col-md-6 mb-4">
             <div class="card border-left-warning shadow h-100 py-2 bg-darkblue">
               <div class="card-body">
                 <div class="d-flex justify-content-between align-items-center">
@@ -173,7 +175,7 @@
                       </a>
                     </div>
                     <div class="text-xs font-weight-bold text-uppercase mb-1">
-                      Prenchimento
+                      Preenchimento
                     </div>
                   </div>
                   <i
@@ -186,57 +188,7 @@
             </div>
           </div>
 
-          <div class="col-xl-3 col-md-6 mb-4">
-            <div class="card border-left-warning shadow h-100 py-2 bg-gray">
-              <div class="card-body">
-                <div class="d-flex justify-content-between align-items-center">
-                  <div class="mr-3">
-                    <div class="text-xs font-weight-normal mb-1">
-                      <a
-                        href="mudar-senha.html"
-                        class="small text-white stretched-link text-decoration-none"
-                      >
-                        Pesquisar
-                      </a>
-                    </div>
-                    <div class="text-xs font-weight-bold text-uppercase mb-1">
-                      Prenchimento
-                    </div>
-                  </div>
-                  <i
-                    width="24"
-                    height="24"
-                    class="fas fa-file-invoice fa-3x"
-                  ></i>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-xl-3 col-md-6 mb-4">
-            <div class="card border-left-warning shadow h-100 py-2 bg-blue">
-              <div class="card-body">
-                <div class="d-flex justify-content-between align-items-center">
-                  <div class="mr-3">
-                    <div class="text-xs font-weight-normal mb-1">
-                      <a
-                        href="mudar-senha.html"
-                        class="small text-white stretched-link text-decoration-none"
-                      >
-                        Gerar
-                      </a>
-                    </div>
-                    <div class="text-xs font-weight-bold text-uppercase mb-1">
-                      PDF
-                    </div>
-                  </div>
-                  <i width="24" height="24" class="fas fa-file-pdf fa-3x"></i>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-xl-3 col-md-6 mb-4">
+          <div class="col-xl-4 col-md-6 mb-4">
             <div class="card border-left-warning shadow h-100 py-2 bg-green">
               <div class="card-body">
                 <div class="d-flex justify-content-between align-items-center">
@@ -273,51 +225,25 @@
                 class="card-header py-3 d-flex flex-row align-items-center justify-content-between"
               >
                 <h6 class="m-0 font-weight-bold text-primary">
-                  Lista de prenchimentos
+                  Lista de preenchimentos
                 </h6>
               </div>
               <div class="card-body">
                 <div class="table-responsive">
-                  <table class="table table-hover">
+                  <table class="table table-hover" id="tablaHome">
                     <thead class="thead-dark">
                       <tr>
                         <th scope="col">#</th>
-                        <th scope="col">Código</th>
+                        <!-- <th scope="col">Código</th> -->
                         <th scope="col">Conpresp/Resolução</th>
-                        <th scope="col">LPP</th>
-                        <!-- <th scope="col">Denominações</th> -->
+                        <th scope="col">Denominações</th>
+                        <!-- <th scope="col">LPP</th> -->
                         <th scope="col">Preservação</th>
                         <th scope="col">Conservação</th>
                         <th scope="col d-none d-lg-block"></th>
                       </tr>
                     </thead>
-                    <tbody id="tbodyList" class="text-body">
-                      <!-- <tr id="trList">
-                        <th id="idList" scope="row">1</th>
-                        <td id="codigoList"0591/001-001</td>
-                        <td id="conprespList">Res. 05/91</td>
-                        <td id="lppList">Telma Borges</td>
-                        <td id="preservacaoList">Preservado</td>
-                        <td id="conservacaoList">Bom</td>
-                        <td class="bg-darkgreen-icon d-none d-lg-block">
-                          <a  href="#">
-                            <i class="fas fa-eye"></i>
-                          </a>
-                          |
-                          <a  href="#">
-                            <i class="fas fa-edit"></i>
-                          </a>
-                          |
-                          <a href="#">
-                            <i class="fas fa-trash-alt"></i>
-                          </a>
-                          |
-                          <a  href="#">
-                            <i class="fas fa-print"></i>
-                          </a>
-                        </td>
-                      </tr> -->
-                    </tbody>
+                    <tbody id="tbodyList" class="text-body"></tbody>
                   </table>
                 </div>
               </div>
@@ -328,7 +254,6 @@
     </div>
 
     <!-- Large modal -->
-
     <div
       class="modal fade pruebaModal"
       tabindex="-1"
@@ -361,6 +286,44 @@
       </div>
     </div>
 
+    <!-- Usuario Modal -->
+    <div
+      class="modal fade"
+      id="usuario-modal"
+      data-backdrop="static"
+      data-keyboard="false"
+      tabindex="-1"
+      aria-labelledby="staticBackdropLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">...</div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="button" class="btn btn-primary">Understood</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <footer>
       <div class="footer-content">
         <a class="" href="#">
@@ -375,23 +338,30 @@
         </a>
         <ul class="socials">
           <li>
-            <a href=""><i class="fa fa-facebook" aria-hidden="true"></i></a>
+            <a href="https://www.facebook.com/preservalpp" target="_blank"
+              ><i class="fa fa-facebook" aria-hidden="true"></i
+            ></a>
           </li>
           <li>
-            <a href=""><i class="fa fa-instagram" aria-hidden="true"></i></a>
+            <a href="https://www.instagram.com/preserva.lpp/" target="_blank"
+              ><i class="fa fa-instagram" aria-hidden="true"></i
+            ></a>
           </li>
           <li>
-            <a href=""><i class="fa fa-twitter" aria-hidden="true"></i></a>
-          </li>
-          <li>
-            <a href=""><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+            <a
+              href="https://www.youtube.com/channel/UCM0unl5Kp9y0JVmO_GgvvBg "
+              target="_blank"
+              ><i class="fa fa-youtube" aria-hidden="true"></i
+            ></a>
           </li>
         </ul>
       </div>
       <div class="footer-bottom">
         <p>
           copyright &copy;2020 anhembi. desing by
-          <a href="https://github.com/JhordanJulcamoro">@JhordanJulcamoro</a>
+          <a href="https://github.com/JhordanJulcamoro" target="_blank"
+            >@JhordanJulcamoro</a
+          >
         </p>
       </div>
     </footer>
@@ -412,6 +382,13 @@
       integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
       crossorigin="anonymous"
     ></script>
+
+    <!-- sweetalert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9.14.2/dist/sweetalert2.all.min.js"></script>
+
+    <!-- datatables -->
+    <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script>
 
     <!-- FIREBASE SCRIPTS -->
     <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-app.js"></script>

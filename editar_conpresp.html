@@ -1,0 +1,2013 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1,
+    shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <!-- DataTable -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css"
+    />
+
+    <link rel="stylesheet" href="css/home.css" />
+    <link rel="stylesheet" href="css/editar_compresp.css" />
+    <script
+      src="https://kit.fontawesome.com/5e195b88df.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="icon" href="img/logo.png" />
+    <title>CONPRESP</title>
+  </head>
+  <body>
+    <div id="content-wrapper" class="d-flex flex-column">
+      <div id="content">
+        <nav
+          class="navbar navbar-expand navbar-dark bg-darkblue topbar static-top shadow"
+        >
+          <a class="navbar-brand" href="#">
+            <img
+              src="img/logo_1.png"
+              width="30"
+              height="30"
+              class="d-inline-block align-top"
+              alt=""
+            />
+            CONPRESP
+          </a>
+
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item dropdown no-arrow">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="userDropdown"
+                role="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small"
+                  >Douglas McGee</span
+                >
+                <img
+                  class="img-profile rounded-circle"
+                  src="img/user.svg"
+                  width="30px"
+                  height="30px"
+                />
+              </a>
+              <div
+                class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                aria-labelledby="userDropdown"
+              >
+                <a
+                  class="dropdown-item"
+                  href="#"
+                  data-toggle="modal"
+                  data-target="#usuario-modal"
+                >
+                  <i
+                    class="fas fa-user fa-sm fa-fw mr-2 text-gray-400 bg-darkgreen-icon"
+                  ></i>
+                  Perfil
+                </a>
+                <a class="dropdown-item" href="#">
+                  <i
+                    class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400 bg-darkgreen-icon"
+                  ></i>
+                  Configurações
+                </a>
+                <a
+                  class="dropdown-item btnLogout"
+                  href="#"
+                  data-toggle="modal"
+                  data-target="#logoutModal"
+                >
+                  <i
+                    class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400 bg-darkgreen-icon"
+                  ></i>
+                  Sair
+                </a>
+              </div>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+    <nav class="navbar navbar-expand-md navbar-light bg-light rounded">
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarsExample10"
+        aria-controls="navbarsExample10"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div
+        class="collapse navbar-collapse justify-content-md-center"
+        id="navbarsExample10"
+      >
+        <ul class="navbar-nav">
+          <li class="nav-item active font-hover">
+            <a class="nav-link" href="home.html"
+              ><i class="fas fa-home bg-gray-icon"></i>Home</a
+            >
+          </li>
+          <li class="nav-item font-hover">
+            <a class="nav-link" href="#"
+              ><i class="fas fa-users bg-gray-icon"></i>Usuários</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container mt-4">
+      <div class="container-fluid">
+        <!-- Page Heading -->
+        <div class="d-sm-flex align-items-center justify-content-between mb-4">
+          <h1 class="h3 mb-0 text-gray-800">Editar Registro Conpresp</h1>
+        </div>
+
+        <!-- Content Row -->
+        <div class="row">
+          <div class="col-xl-12 col-lg-12">
+            <div class="card shadow mb-4">
+              <div
+                class="card-header py-3 d-flex flex-row align-items-center justify-content-between"
+              >
+                <h6 class="m-0 font-weight-bold text-primary">
+                  Dados a editar
+                </h6>
+              </div>
+              <img class="card-img" src="img/banner.png" alt="Card image" />
+              <div class="card-body">
+                <div class="row color-text">
+                  <!-- <div class="col-md-8 order-md-2 mb-4">
+                    <h4
+                      class="d-flex justify-content-between align-items-center mb-3"
+                    >
+                      <span class="text-muted">Your cart</span>
+                      <span class="badge badge-secondary badge-pill">3</span>
+                    </h4>
+                    <ul class="list-group mb-3">
+                      <li
+                        class="list-group-item d-flex justify-content-between lh-condensed"
+                      >
+                        <div>
+                          <h6 class="my-0">Product name</h6>
+                          <small class="text-muted">Brief description</small>
+                        </div>
+                        <span class="text-muted">$12</span>
+                      </li>
+                      <li
+                        class="list-group-item d-flex justify-content-between lh-condensed"
+                      >
+                        <div>
+                          <h6 class="my-0">Second product</h6>
+                          <small class="text-muted">Brief description</small>
+                        </div>
+                        <span class="text-muted">$8</span>
+                      </li>
+                      <li
+                        class="list-group-item d-flex justify-content-between lh-condensed"
+                      >
+                        <div>
+                          <h6 class="my-0">Third item</h6>
+                          <small class="text-muted">Brief description</small>
+                        </div>
+                        <span class="text-muted">$5</span>
+                      </li>
+                      <li
+                        class="list-group-item d-flex justify-content-between bg-light"
+                      >
+                        <div class="text-success">
+                          <h6 class="my-0">Promo code</h6>
+                          <small>EXAMPLECODE</small>
+                        </div>
+                        <span class="text-success">-$5</span>
+                      </li>
+                      <li
+                        class="list-group-item d-flex justify-content-between"
+                      >
+                        <span>Total (USD)</span>
+                        <strong>$20</strong>
+                      </li>
+                    </ul>
+
+                    <form class="card p-2">
+                      <div class="input-group">
+                        <input
+                          type="text"
+                          class="form-control"
+                          placeholder="Promo code"
+                        />
+                        <div class="input-group-append">
+                          <button type="submit" class="btn btn-secondary">
+                            Redeem
+                          </button>
+                        </div>
+                      </div>
+                    </form>
+                  </div> -->
+                  <div class="col-md-12 order-md-1">
+                    <form class="needs-validation" novalidate>
+                      <div class="row justify-content-center">
+                        <button
+                          type="button"
+                          class="btn btn-primary btn-lg m-2 col-md-3"
+                        >
+                          <i class="fa fa-times" aria-hidden="true"></i>
+                          Cancelar
+                        </button>
+                        <button
+                          type="button"
+                          class="btn btn-info btn-lg m-2 col-md-3"
+                        >
+                          <i class="fa fa-floppy-o" aria-hidden="true"></i>
+                          Guardar
+                        </button>
+                      </div>
+
+                      <div class="mb-3">
+                        <label>Código:</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id=""
+                          placeholder="0591/029-009"
+                          disabled
+                        />
+                      </div>
+                      <div class="mb-3">
+                        <label>Nome:</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id=""
+                          placeholder="Pedro Martines"
+                          required
+                        />
+                      </div>
+                      <div class="mb-3">
+                        <label for="grupo">Grupo:</label>
+                        <select
+                          class="custom-select d-block w-100"
+                          id="grupo"
+                          required
+                        >
+                          <option value="">Choose...</option>
+                          <option>Equipe Centro/Mooca</option>
+                          <option>Equipe Vila Olímpia</option>
+                          <option>Equipe DHP</option>
+                        </select>
+                        <div class="invalid-feedback">
+                          Please select a valid grupo.
+                        </div>
+                      </div>
+                      <hr class="mb-4" />
+
+                      <div class="mb-3 p-2 subtitulos">
+                        <h4>1. Dados Gerais</h4>
+                      </div>
+                      <div class="mb-3">
+                        <label>Número do Bem:</label>
+                        <h6>
+                          Inserir o número do bem a ser cadastrado de acordo com
+                          o número correspondente na resolução de tombamento. No
+                          caso de resoluções com um bem apenas, identificá-lo
+                          com o número 01 (um).
+                        </h6>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id=""
+                          placeholder="01"
+                          required
+                        />
+                      </div>
+                      <div class="mb-3">
+                        <label>Denominação:</label>
+                        <h6>
+                          Inserir a denominação oficial do bem, de acordo com a
+                          resolução ou documento oficial.
+                        </h6>
+                        <textarea
+                          class="form-control"
+                          aria-label="With textarea"
+                          required
+                        ></textarea>
+                      </div>
+                      <div class="mb-3">
+                        <label>Denominações Complementares:</label>
+                        <h6>
+                          Inserir denominações complementares, quando houver.
+                        </h6>
+                        <textarea
+                          class="form-control"
+                          aria-label="With textarea"
+                        ></textarea>
+                      </div>
+                      <div class="mb-3">
+                        <label>Número de Bens</label>
+                        <h6>
+                          Ingressar o número de bens que compõe o item. Ex.:
+                          Casa Mário de Andrade: 01 item | Vila Economizadora:
+                          120 itens
+                        </h6>
+                        <input
+                          type="text"
+                          class="form-control"
+                          placeholder="01"
+                          required
+                        />
+                      </div>
+                      <div class="row">
+                        <div class="col-md-3 mb-3">
+                          <label for="state">Tipo de Bem</label>
+                          <select class="custom-select d-block w-100" required>
+                            <option value="">Selecionar tipo de bem...</option>
+                            <option>Inmóvel</option>
+                            <option>Móvel</option>
+                            <option>Sítio Urbano</option>
+                            <option>Natural</option>
+                          </select>
+                          <div class="invalid-feedback">
+                            Please provide a valid state.
+                          </div>
+                        </div>
+                        <div class="col-md-5 mb-3">
+                          <label for="state">Recorte Temático</label>
+                          <select class="custom-select d-block w-100" required>
+                            <option value="">
+                              Selecionar classificação do bem...
+                            </option>
+                            <option>Cinemas, Conservatórios e Teatros</option>
+                            <option>Conjuntos Residenciais</option>
+                            <option>Edifícios Bancários</option>
+                            <option>Edifícios Comerciais</option>
+                            <option>Edifícios de Uso Administrativo</option>
+                            <option>Edifícios de Uso Especia</option>
+                            <option>Edifícios de Uso Ferroviário</option>
+                            <option>Edifícios de Uso Misto</option>
+                            <option>Edifícios Escolares</option>
+                            <option>Edifícios Hospitalares</option>
+                            <option>Edifícios Hoteleiros</option>
+                            <option>Edifícios Religiosos</option>
+                            <option>
+                              Edifícios Residenciais Multifamiliares
+                            </option>
+                            <option>
+                              Edifícios Residenciais Unifamiliares
+                            </option>
+                            <option>
+                              Ed. Res. Unifamiliares - Conj. Residenciais
+                            </option>
+                            <option>Edifícios Rurais</option>
+                            <option>Logradouros</option>
+                            <option>Monumentos</option>
+                            <option>Museus e Pavilhões de Exposição</option>
+                            <option>Obras de Arte</option>
+                          </select>
+                          <div class="invalid-feedback">
+                            Please provide a valid state.
+                          </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                          <label for="propriedade">Propriedade</label>
+                          <select
+                            class="custom-select d-block w-100"
+                            id="propriedade"
+                            required
+                          >
+                            <option value="">
+                              Selecionar classificação...
+                            </option>
+                            <option>Pública Municipal</option>
+                            <option>Pública Estadual</option>
+                            <option>Pública Federal</option>
+                            <option>Instituição Religiosa</option>
+                            <option>Outros</option>
+                          </select>
+                          <div class="invalid-feedback">
+                            Please select a valid classificação.
+                          </div>
+                        </div>
+                      </div>
+                      <div class="mb-3 p-2 subtitulos_sub">
+                        <h4>Uso Original</h4>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-6 mb-3">
+                          <label for="state">Térreo (original)</label>
+                          <select class="custom-select d-block w-100" required>
+                            <option value="">Selecionar tipo...</option>
+                            <option>Evocativo</option>
+                            <option>Funerário</option>
+                            <option>Industrial</option>
+                            <option>Institucional</option>
+                            <option>Residencial</option>
+                            <option>Serviços</option>
+                            <option>Outros</option>
+                          </select>
+                          <div class="invalid-feedback">
+                            Please provide a valid state.
+                          </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                          <label for="state"
+                            >Demais pavimentos (original)</label
+                          >
+                          <select class="custom-select d-block w-100" required>
+                            <option value="">Selecionar tipo...</option>
+                            <option>Evocativo</option>
+                            <option>Funerário</option>
+                            <option>Industrial</option>
+                            <option>Institucional</option>
+                            <option>Residencial</option>
+                            <option>Serviços</option>
+                            <option>Outros</option>
+                          </select>
+                          <div class="invalid-feedback">
+                            Please provide a valid state.
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="mb-3 p-2 subtitulos_sub">
+                        <h4>Uso Atual</h4>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-6 mb-3">
+                          <label for="state">Térreo (atual)</label>
+                          <select class="custom-select d-block w-100" required>
+                            <option value="">Selecionar tipo...</option>
+                            <option>Evocativo</option>
+                            <option>Funerário</option>
+                            <option>Industrial</option>
+                            <option>Institucional</option>
+                            <option>Residencial</option>
+                            <option>Serviços</option>
+                            <option>Outros</option>
+                          </select>
+                          <div class="invalid-feedback">
+                            Please provide a valid state.
+                          </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                          <label for="state">Demais pavimentos (atual)</label>
+                          <select class="custom-select d-block w-100" required>
+                            <option value="">Selecionar tipo...</option>
+                            <option>Evocativo</option>
+                            <option>Funerário</option>
+                            <option>Industrial</option>
+                            <option>Institucional</option>
+                            <option>Residencial</option>
+                            <option>Serviços</option>
+                            <option>Outros</option>
+                          </select>
+                          <div class="invalid-feedback">
+                            Please provide a valid state.
+                          </div>
+                        </div>
+                      </div>
+                      <div class="mb-3">
+                        <label>Uso - Observações:</label>
+                        <h6>Inserir observações</h6>
+                        <textarea
+                          class="form-control"
+                          aria-label="With textarea"
+                          required
+                        ></textarea>
+                      </div>
+
+                      <div class="mb-3 p-2 subtitulos">
+                        <h4>2. Tombamento</h4>
+                      </div>
+                      <div class="mb-3">
+                        <label>Resolução:</label>
+                        <h6>
+                          Seguir o formato: Ex.: Res. 05/91 Utilizar o site da
+                          prefeitura como referência:
+                          <a
+                            href="http://www.prefeitura.sp.gov.br/cidade/secretarias/cultura/conpresp/legislacao/resolucoes/index.php?p=1137"
+                            target="_blank"
+                            >CLICK AQUI</a
+                          >
+                        </h6>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id=""
+                          placeholder="Res. 05/91"
+                          required
+                        />
+                      </div>
+                      <div class="mb-3">
+                        <label>Resoluções Relacionadas ao Bem:</label>
+                        <h6>
+                          Outras resoluções relacionadas ao , como, por exemplo,
+                          regulamentações de área envoltória.
+                        </h6>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id=""
+                          placeholder=""
+                        />
+                      </div>
+                      <div class="mb-3 p-2 subtitulos_sub">
+                        <h4>CONDEPHAAT</h4>
+                      </div>
+                      <div class="mb-3">
+                        <label>Resolução:</label>
+                        <h6>
+                          Seguir o formato: Ex.: RES. SC SN/70 ou RES. SC 67/82
+                          Utilizar o site da prefeitura como referência:
+                          <a
+                            href=" http://www.prefeitura.sp.gov.br/cidade/secretarias/cultura/cit/index.php?p=1157"
+                            target="_blank"
+                            >CLICK AQUI</a
+                          >
+                        </h6>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id=""
+                          placeholder="Res. SC SN/69 de 16/10/69"
+                          required
+                        />
+                      </div>
+                      <div class="mb-3">
+                        <label>Resoluções Relacionadas ao Bem:</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id=""
+                          placeholder=""
+                        />
+                      </div>
+                      <div class="mb-3 p-2 subtitulos_sub">
+                        <h4>IPHAN</h4>
+                      </div>
+                      <div class="mb-3">
+                        <label>Resolução:</label>
+                        <h6>
+                          Seguir o formato: Ex.: nº 353 Ano 1951 Utilizar a
+                          lista de bens tombados do Iphan como referência:
+                          <a
+                            href="http://portal.iphan.gov.br/uploads/ckfinder/arquivos/2016-11-25_Lista_Bens_Tombados.pdf"
+                            target="_blank"
+                            >CLICK AQUI</a
+                          >
+                        </h6>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id=""
+                          placeholder=""
+                          required
+                        />
+                      </div>
+                      <div class="mb-3">
+                        <label>Resoluções Relacionadas ao Bem:</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id=""
+                          placeholder=""
+                        />
+                      </div>
+                      <div class="mb-3">
+                        <label>Tipos de Proteção:</label>
+                        <div class="row m-2">
+                          <div class="col-md-6 mb-3">
+                            <div class="custom-control custom-checkbox">
+                              <input
+                                type="checkbox"
+                                class="custom-control-input"
+                                id="cb-apt"
+                              />
+                              <label class="custom-control-label" for="cb-apt"
+                                >APT</label
+                              >
+                            </div>
+                            <div class="custom-control custom-checkbox">
+                              <input
+                                type="checkbox"
+                                class="custom-control-input"
+                                id="cb-teo"
+                              />
+                              <label class="custom-control-label" for="cb-teo"
+                                >TEO</label
+                              >
+                            </div>
+                            <div class="custom-control custom-checkbox">
+                              <input
+                                type="checkbox"
+                                class="custom-control-input"
+                                id="cb-t"
+                              />
+                              <label class="custom-control-label" for="cb-t"
+                                >T</label
+                              >
+                            </div>
+                            <div class="custom-control custom-checkbox">
+                              <input
+                                type="checkbox"
+                                class="custom-control-input"
+                                id="cb-ticp"
+                              />
+                              <label class="custom-control-label" for="cb-ticp"
+                                >TICP</label
+                              >
+                            </div>
+                          </div>
+
+                          <div class="col-md-6 mb-3">
+                            <div class="custom-control custom-checkbox">
+                              <input
+                                type="checkbox"
+                                class="custom-control-input"
+                                id="cb-apc"
+                              />
+                              <label class="custom-control-label" for="cb-apc"
+                                >ZEPEC APC</label
+                              >
+                            </div>
+                            <div class="custom-control custom-checkbox">
+                              <input
+                                type="checkbox"
+                                class="custom-control-input"
+                                id="cb-bir"
+                              />
+                              <label class="custom-control-label" for="cb-bir"
+                                >ZEPEC BIR</label
+                              >
+                            </div>
+                            <div class="custom-control custom-checkbox">
+                              <input
+                                type="checkbox"
+                                class="custom-control-input"
+                                id="cb-aue"
+                              />
+                              <label class="custom-control-label" for="cb-aue"
+                                >ZEPEC AUE</label
+                              >
+                            </div>
+                            <div class="custom-control custom-checkbox">
+                              <input
+                                type="checkbox"
+                                class="custom-control-input"
+                                id="cb-app"
+                              />
+                              <label class="custom-control-label" for="cb-app"
+                                >ZEPEC APP</label
+                              >
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="mb-3 p-2 subtitulos">
+                        <h4>3. Localização</h4>
+                      </div>
+                      <div class="mb-3">
+                        <label class="font-weight-bold">Endereço Atual</label>
+                        <h6>
+                          Preencher os dados de localização do bem, utilizando
+                          os ferramentas disponíveis em:
+                          <a
+                            href="http://geosampa.prefeitura.sp.gov.br/PaginasPublicas/_SBC.aspx"
+                            target="_blank"
+                            >GEOSAMPA</a
+                          >
+                          e
+                          <a
+                            href="http://www3.prefeitura.sp.gov.br/cit/Forms/frmPesquisaGeral.aspx"
+                            target="_blank"
+                            >CADASTRO DE IMÓVEIS TOMBADOS</a
+                          >
+                        </h6>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-6 mb-3">
+                          <label for="state">Tipo</label>
+                          <select class="custom-select d-block w-100" required>
+                            <option value="">Selecionar tipo...</option>
+                            <option>ALAMEDA</option>
+                            <option>AVENIDA</option>
+                            <option>CAMPO</option>
+                            <option>CHACARA</option>
+                            <option>ESTRADA</option>
+                            <option>JARDIM</option>
+                            <option>LADEIRA</option>
+                            <option>LAGO</option>
+                            <option>LAGOA</option>
+                            <option>LARGO</option>
+                            <option>PARQUE</option>
+                            <option>PASSARELA</option>
+                            <option>PATIO</option>
+                            <option>PRACA</option>
+                            <option>RODOVIA</option>
+                            <option>RUA</option>
+                            <option>SETOR</option>
+                            <option>SITIO</option>
+                            <option>TRAVESSA</option>
+                            <option>VIA</option>
+                            <option>VIADUTO</option>
+                            <option>VIELA</option>
+                            <option>OUTROS</option>
+                          </select>
+                          <div class="invalid-feedback">
+                            Please provide a valid state.
+                          </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                          <label for="state">Título</label>
+                          <select class="custom-select d-block w-100" required>
+                            <option value="">Selecionar tipo...</option>
+                            <option>ABADE</option>
+                            <option>ACADEMICO</option>
+                            <option>ADVOGADO</option>
+                            <option>AGENTE</option>
+                            <option>AGRIC</option>
+                            <option>AGRIMENSOR</option>
+                            <option>AJUDANTE</option>
+                            <option>ALFERES</option>
+                            <option>ALMIRANTE</option>
+                            <option>APOSTOLO</option>
+                            <option>ARCEBISPO</option>
+                            <option>ARCIP</option>
+                            <option>ARCJO</option>
+                            <option>ARQUITETA</option>
+                            <option>ARQUITETO</option>
+                            <option>ARQUITETO PROFESSOR</option>
+                            <option>ASPIRANTE</option>
+                            <option>AVENIDA</option>
+                            <option>AVIADOR</option>
+                            <option>AVIADORA</option>
+                            <option>BACHAREL</option>
+                            <option>BANDEIRANTE</option>
+                            <option>BANQUEIRO</option>
+                            <option>BARAO</option>
+                            <option>BARONESA</option>
+                            <option>BEATO PADRE</option>
+                            <option>BEM AVENTURADO</option>
+                            <option>BENEMERITO</option>
+                            <option>BISPO</option>
+                            <option>BRIGADEIRO</option>
+                            <option>CABO</option>
+                            <option>CABO PM</option>
+                            <option>CADETE</option>
+                            <option>CAMPEADOR</option>
+                            <option>CAPITAO</option>
+                            <option>CAPITAO ALMIRANTE</option>
+                            <option>CAPITAO DE FRAGATA</option>
+                            <option>CAPITAO DE MAR E GUERRA</option>
+                            <option>CAPITAO GENERAL</option>
+                            <option>CAPITAO MOR</option>
+                            <option>CAPITAO PM</option>
+                            <option>CAPITAO TENENTE</option>
+                            <option>CARDEAL</option>
+                            <option>CATEQUISTA</option>
+                            <option>CAVALEIRO</option>
+                            <option>CAVALHEIRO</option>
+                            <option>CINEASTA</option>
+                            <option>COMANDANTE</option>
+                            <option>COMEDIANTE</option>
+                            <option>COMENDADOR</option>
+                            <option>COMISSARIA</option>
+                            <option>COMISSARIO</option>
+                            <option>COMPOSITOR</option>
+                            <option>CONDE</option>
+                            <option>CONDESSA</option>
+                            <option>CONEGO</option>
+                            <option>CONFRADE</option>
+                            <option>CONSELHEIRO</option>
+                            <option>CONSUL</option>
+                            <option>CORONEL</option>
+                            <option>CORONEL PM</option>
+                            <option>CORREGEDOR</option>
+                            <option>DELEGADO</option>
+                            <option>DENTISTA</option>
+                            <option>DEPUTADA</option>
+                            <option>DEPUTADO</option>
+                            <option>DEPUTADO DOUTOR</option>
+                            <option>DESEMBARGADOR</option>
+                            <option>DIACO</option>
+                            <option>DOM</option>
+                            <option>DONA</option>
+                            <option>DOUTOR</option>
+                            <option>DOUTORA</option>
+                            <option>DUQUE</option>
+                            <option>DUQUESA</option>
+                            <option>EDITOR</option>
+                            <option>EDUCADOR</option>
+                            <option>EDUCADORA</option>
+                            <option>EMBAIXADOR</option>
+                            <option>EMBAIXADORA</option>
+                            <option>ENGENHEIRA</option>
+                            <option>ENGENHEIRO</option>
+                            <option>ESCOTEIRO</option>
+                            <option>ESCRAVO</option>
+                            <option>ESCRITOR</option>
+                            <option>EXPEDICIONARIO</option>
+                            <option>FISICO</option>
+                            <option>FREI</option>
+                            <option>GENERAL</option>
+                            <option>GOVERNADOR</option>
+                            <option>GRUMETE</option>
+                            <option>GUARDA CIVIL METROPOLITANO</option>
+                            <option>IMACULADA</option>
+                            <option>IMPERADOR</option>
+                            <option>IMPERATRIZ</option>
+                            <option>INFANTE</option>
+                            <option>INSPETOR</option>
+                            <option>IRMA</option>
+                            <option>IRMAO</option>
+                            <option>IRMAOS</option>
+                            <option>IRMAS</option>
+                            <option>JORNALISTA</option>
+                            <option>LIBERTADOR</option>
+                            <option>LIDCO</option>
+                            <option>LIVREIRO</option>
+                            <option>LORDE</option>
+                            <option>MADAME</option>
+                            <option>MADRE</option>
+                            <option>MAESTRO</option>
+                            <option>MAJOR</option>
+                            <option>MAJOR AVIADOR</option>
+                            <option>MAJOR BRIGADEIRO</option>
+                            <option>MAQUINISTA</option>
+                            <option>MARECHAL</option>
+                            <option>MARECHAL DO AR</option>
+                            <option>MARQUES</option>
+                            <option>MARQUESA</option>
+                            <option>MERE</option>
+                            <option>MESTRAS</option>
+                            <option>MESTRE</option>
+                            <option>MESTRES</option>
+                            <option>MILITANTE</option>
+                            <option>MINISTRO</option>
+                            <option>MISSIONARIA</option>
+                            <option>MISSIONARIO</option>
+                            <option>MONGE</option>
+                            <option>MONSENHOR</option>
+                            <option>MUNIC</option>
+                            <option>MUSICO</option>
+                            <option>NOSSA SENHORA</option>
+                            <option>NOSSO SENHOR</option>
+                            <option>OUVIDOR</option>
+                            <option>PADRE</option>
+                            <option>PADRES</option>
+                            <option>PAI</option>
+                            <option>PAPA</option>
+                            <option>PASTOR</option>
+                            <option>PATRIARCA</option>
+                            <option>POETA</option>
+                            <option>POETISA</option>
+                            <option>PREFEITO</option>
+                            <option>PRESIDENTE</option>
+                            <option>PRESIDENTE DA ACAD.BRAS.LETRAS</option>
+                            <option>PREVR</option>
+                            <option>PRIMEIRO SARGENTO</option>
+                            <option>PRIMEIRO SARGENTO PM</option>
+                            <option>PRIMEIRO TENENTE</option>
+                            <option>PRIMEIRO TENENTE PM</option>
+                            <option>PRINCESA</option>
+                            <option>PRINCIPE</option>
+                            <option>PROCURADOR</option>
+                            <option>PROFESSOR</option>
+                            <option>PROFESSOR DOUTOR</option>
+                            <option>PROFESSOR ENGENHEIRO</option>
+                            <option>PROFESSORA</option>
+                            <option>PROFETA</option>
+                            <option>PROMOTOR</option>
+                            <option>PROVEDOR</option>
+                            <option>PROVEDOR MOR</option>
+                            <option>RABINO</option>
+                            <option>RADIALISTA</option>
+                            <option>RAINHA</option>
+                            <option>REGENTE</option>
+                            <option>REI</option>
+                            <option>REVERENDO</option>
+                            <option>RUA</option>
+                            <option>SACERDOTE</option>
+                            <option>SANTA</option>
+                            <option>SANTO</option>
+                            <option>SAO</option>
+                            <option>SARGENTO</option>
+                            <option>SARGENTO MOR</option>
+                            <option>SARGENTO PM</option>
+                            <option>SEGUNDO SARGENTO</option>
+                            <option>SEGUNDO SARGENTO PM</option>
+                            <option>SEGUNDO TENENTE</option>
+                            <option>SENADOR</option>
+                            <option>SENHOR</option>
+                            <option>SENHORA</option>
+                            <option>SERTANISTA</option>
+                            <option>SINHA</option>
+                            <option>SIR</option>
+                            <option>SOCIOLOGO</option>
+                            <option>SOLDADO</option>
+                            <option>SOLDADO PM</option>
+                            <option>SOROR</option>
+                            <option>SUB TENENTE</option>
+                            <option>TENENTE</option>
+                            <option>TENENTE AVIADOR</option>
+                            <option>TENENTE BRIGADEIRO</option>
+                            <option>TENENTE CORONEL</option>
+                            <option>TENENTE CORONEL PM</option>
+                            <option>TEOLOGO</option>
+                            <option>TERCEIRO SARGENTO</option>
+                            <option>TERCEIRO SARGENTO PM</option>
+                            <option>TIA</option>
+                            <option>VEREADOR</option>
+                            <option>VICE ALMIRANTE</option>
+                            <option>VICE REI</option>
+                            <option>VIGARIO</option>
+                            <option>VISCONDE</option>
+                            <option>VISCONDESSA</option>
+                            <option>VOLUNTARIO</option>
+                          </select>
+                          <div class="invalid-feedback">
+                            Please provide a valid state.
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="mb-3">
+                        <label>Logradouro:</label>
+                        <h6>
+                          Preencher apenas com o nome principal do logradouro
+                          sem o título e sem preposição (de, dos, etc), sem
+                          acentuação e sem cedilha. Ex. para "Praça do
+                          Patriarca", escrever só "Patriarca"
+                        </h6>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id=""
+                          placeholder=""
+                        />
+                      </div>
+                      <div class="mb-3">
+                        <label>Número Atual:</label>
+                        <h6>Ingressar o Número Atual do endereço</h6>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id=""
+                          placeholder=""
+                        />
+                      </div>
+                      <div class="mb-3">
+                        <label>Endereço Complementar:</label>
+                        <h6>
+                          Inserir endereços adicionais quando houver entradas
+                          secundárias. Preencher com nome da rua e número.
+                        </h6>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id=""
+                          placeholder=""
+                        />
+                      </div>
+                      <div class="row">
+                        <div class="col-md-6 mb-3">
+                          <label for="state">Distrito</label>
+                          <h6>
+                            Escolher o Distrito. Utilizar o GEOSAMPA como
+                            referência. Camada: Limites Administrativos -
+                            Distrito
+                          </h6>
+                          <select class="custom-select d-block w-100" required>
+                            <option value="">Selecionar distrito...</option>
+
+                            <option>Água Rasa</option>
+                            <option>Alto de Pinheiros</option>
+                            <option>Anhanguera</option>
+                            <option>Aricanduva</option>
+                            <option>Artur Alvim</option>
+                            <option>Barra Funda</option>
+                            <option>Bela Vista</option>
+                            <option>Belém</option>
+                            <option>Bom Retiro</option>
+                            <option>Brás</option>
+                            <option>Brasilândia</option>
+                            <option>Butantã</option>
+                            <option>Cachoeirinha</option>
+                            <option>Cambuci</option>
+                            <option>Campo Belo</option>
+                            <option>Campo Grande</option>
+                            <option>Campo Limpo</option>
+                            <option>Cangaíba</option>
+                            <option>Capão Redondo</option>
+                            <option>Carrão</option>
+                            <option>Casa Verde</option>
+                            <option>Cidade Ademar</option>
+                            <option>Cidade Dutra</option>
+                            <option>Cidade Líder</option>
+                            <option>Cidade Tiradentes</option>
+                            <option>Consolação</option>
+                            <option>Cursino</option>
+                            <option>Ermelino Matarazzo</option>
+                            <option>Freguesia do Ó</option>
+                            <option>Grajaú</option>
+                            <option>Guaianases</option>
+                            <option>Iguatemi</option>
+                            <option>Ipiranga</option>
+                            <option>Itaim Bibi</option>
+                            <option>Itaim Paulista</option>
+                            <option>Itaquera</option>
+                            <option>Jabaquara</option>
+                            <option>Jaçanã</option>
+                            <option>Jaraguá</option>
+                            <option>Jaguaré</option>
+                            <option>Jaraguá</option>
+                            <option>Jardim Ângela</option>
+                            <option>Jardim Helena</option>
+                            <option>Jardim Paulista</option>
+                            <option>Jardim São Luís</option>
+                            <option>José Bonifácio</option>
+                            <option>Lajeado</option>
+                            <option>Lapa</option>
+                            <option>Liberdade</option>
+                            <option>Limão</option>
+                            <option>Mandaqui</option>
+                            <option>Marsilac</option>
+                            <option>Moema</option>
+                            <option>Mooca</option>
+                            <option>Morumbi</option>
+                            <option>Parelheiros</option>
+                            <option>Pari</option>
+                            <option>Parque do Carmo</option>
+                            <option>Pedreira</option>
+                            <option>Penha</option>
+                            <option>Perdizes</option>
+                            <option>Perus</option>
+                            <option>Pinheiros</option>
+                            <option>Pirituba</option>
+                            <option>Ponte Rasa</option>
+                            <option>Raposo Tavares</option>
+                            <option>República</option>
+                            <option>Rio Pequeno</option>
+                            <option>Sacomã</option>
+                            <option>Santa Cecília</option>
+                            <option>Santana</option>
+                            <option>Santo Amaro</option>
+                            <option>São Domingos</option>
+                            <option>São Lucas</option>
+                            <option>São Mateus</option>
+                            <option>São Miguel</option>
+                            <option>São Rafael</option>
+                            <option>Sapopemba</option>
+                            <option>Saúde</option>
+                            <option>Sé</option>
+                            <option>Socorro</option>
+                            <option>Tatuapé</option>
+                            <option>Tremembé</option>
+                            <option>Tucuruvi</option>
+                            <option>Vila Andrade</option>
+                            <option>Vila Curuçá</option>
+                            <option>Vila Formosa</option>
+                            <option>Vila Guilherme</option>
+                            <option>Vila Jacuí</option>
+                            <option>Vila Leopoldina</option>
+                            <option>Vila Maria</option>
+                            <option>Vila Mariana</option>
+                            <option>Vila Matilde</option>
+                            <option>Vila Medeiros</option>
+                            <option>Vila Prudente</option>
+                            <option>Vila Sônia</option>
+                          </select>
+                          <div class="invalid-feedback">
+                            Please provide a valid state.
+                          </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                          <label for="state">Prefeitura Regional</label>
+                          <h6>
+                            Escolher o a Prefeitura Regional. Utilizar o
+                            GEOSAMPA como referência. Camada: Limites
+                            Administrativos - Prefeituras Regionais
+                          </h6>
+                          <select class="custom-select d-block w-100" required>
+                            <option value="">Selecionar tipo...</option>
+                            <option>Aricanduva/Vila Formosa</option>
+                            <option>Butantã</option>
+                            <option>Campo Limpo</option>
+                            <option>Capela do Socorro</option>
+                            <option>Casa Verde</option>
+                            <option>Cidade Ademar</option>
+                            <option>Cidade Tiradentes</option>
+                            <option>Ermelino Matarazzo</option>
+                            <option>Freguesia do Ó/Brasilândia</option>
+                            <option>Guaianases</option>
+                            <option>Ipiranga</option>
+                            <option>Itaim Paulista</option>
+                            <option>Itaquera</option>
+                            <option>Jabaquara</option>
+                            <option>Jaçanã/Temembé</option>
+                            <option>Lapa</option>
+                            <option>M'Boi Mirim</option>
+                            <option>Mooca</option>
+                            <option>Parelheiros</option>
+                            <option>Penha</option>
+                            <option>Perus</option>
+                            <option>Pinheiros</option>
+                            <option>Pirituba/Jaraguá</option>
+                            <option>Santana/Tucuruvi</option>
+                            <option>Santo Amaro</option>
+                            <option>São Mateus</option>
+                            <option>São Miguel Paulista</option>
+                            <option>Sapobemba</option>
+                            <option>Sé</option>
+                            <option>Vila Maria/Vila Guilherme</option>
+                            <option>Vila Mariana</option>
+                            <option>Vila Prudente</option>
+                          </select>
+                          <div class="invalid-feedback">
+                            Please provide a valid state.
+                          </div>
+                        </div>
+                      </div>
+                      <div class="mb-3">
+                        <label>Setor:</label>
+                        <h6>
+                          Ingressar o número do setor com três dígitos, inserir
+                          letra "x" antes do número. Ex: Setor 006, inserir:
+                          x006 Utilizar o GEOSAMPA como referência. Camada:
+                          Cadastro / Cadastro Fiscal ou o CIT - Pesquisa por
+                          endereço
+                        </h6>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id=""
+                          placeholder=""
+                        />
+                      </div>
+                      <div class="mb-3">
+                        <label>Quadra:</label>
+                        <h6>
+                          Ingressar o número da quadra com três dígitos, inserir
+                          letra "x" antes. Ex: Quadra 012, inserir: x012
+                          Utilizar o GEOSAMPA como referência. Camada: Cadastro
+                          / Cadastro Fiscal ou o CIT - Pesquisa por endereço
+                        </h6>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id=""
+                          placeholder=""
+                        />
+                      </div>
+                      <div class="mb-3">
+                        <label>Lote:</label>
+                        <h6>
+                          Ingressar o número do lote com quatro dígitos, inserir
+                          letra "x" antes. Ex: Lote 0026, inserir: x0026
+                          Utilizar o GEOSAMPA como referência. Baixar o Croqui
+                          Patrimonial através da Pesquisa por Setor e Quadra ou
+                          o CIT - Pesquisa por endereço
+                        </h6>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id=""
+                          placeholder=""
+                        />
+                      </div>
+                      <div class="mb-3">
+                        <label>DAC:</label>
+                        <h6>
+                          Ingressar o DAC, utilizando o CIT - Cadastro de
+                          Imóveis Tombados como referência. Ingressar apenas um
+                          número
+                          <a
+                            href="http://www3.prefeitura.sp.gov.br/cit/Forms/frmPesquisaGeral.aspx"
+                            >CLICK AQUI</a
+                          >
+                        </h6>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id=""
+                          placeholder=""
+                        />
+                      </div>
+                      <div class="mb-3">
+                        <label>N° de Condomínio:</label>
+                        <h6>
+                          Se houver, ingressar o número de condomínio. Utilizar
+                          o GEOSAMPA como referência. Baixar o Croqui
+                          Patrimonial através da Pesquisa por Setor e Quadra
+                        </h6>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id=""
+                          placeholder=""
+                        />
+                      </div>
+
+                      <div class="mb-3">
+                        <label class="font-weight-bold">Endereço Antigo</label>
+                        <h6>
+                          Preencher os dados de localização do bem, utilizando
+                          os ferramentas disponíveis em:
+                          <a
+                            href="http://geosampa.prefeitura.sp.gov.br/PaginasPublicas/_SBC.aspx"
+                            target="_blank"
+                            >GEOSAMPA</a
+                          >
+                          e
+                          <a
+                            href="http://www3.prefeitura.sp.gov.br/cit/Forms/frmPesquisaGeral.aspx"
+                            target="_blank"
+                            >CADASTRO DE IMÓVEIS TOMBADOS</a
+                          >
+                        </h6>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-6 mb-3">
+                          <label for="state">Tipo Antigo:</label>
+                          <select class="custom-select d-block w-100" required>
+                            <option value="">Selecionar tipo...</option>
+                            <option>ALAMEDA</option>
+                            <option>AVENIDA</option>
+                            <option>CAMPO</option>
+                            <option>CHACARA</option>
+                            <option>ESTRADA</option>
+                            <option>JARDIM</option>
+                            <option>LADEIRA</option>
+                            <option>LAGO</option>
+                            <option>LAGOA</option>
+                            <option>LARGO</option>
+                            <option>PARQUE</option>
+                            <option>PASSARELA</option>
+                            <option>PATIO</option>
+                            <option>PRACA</option>
+                            <option>RODOVIA</option>
+                            <option>RUA</option>
+                            <option>SETOR</option>
+                            <option>SITIO</option>
+                            <option>TRAVESSA</option>
+                            <option>VIA</option>
+                            <option>VIADUTO</option>
+                            <option>VIELA</option>
+                            <option>OUTROS</option>
+                          </select>
+                          <div class="invalid-feedback">
+                            Please provide a valid state.
+                          </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                          <label for="state">Título Antigo:</label>
+                          <select class="custom-select d-block w-100" required>
+                            <option value="">Selecionar tipo...</option>
+                            <option>ABADE</option>
+                            <option>ACADEMICO</option>
+                            <option>ADVOGADO</option>
+                            <option>AGENTE</option>
+                            <option>AGRIC</option>
+                            <option>AGRIMENSOR</option>
+                            <option>AJUDANTE</option>
+                            <option>ALFERES</option>
+                            <option>ALMIRANTE</option>
+                            <option>APOSTOLO</option>
+                            <option>ARCEBISPO</option>
+                            <option>ARCIP</option>
+                            <option>ARCJO</option>
+                            <option>ARQUITETA</option>
+                            <option>ARQUITETO</option>
+                            <option>ARQUITETO PROFESSOR</option>
+                            <option>ASPIRANTE</option>
+                            <option>AVENIDA</option>
+                            <option>AVIADOR</option>
+                            <option>AVIADORA</option>
+                            <option>BACHAREL</option>
+                            <option>BANDEIRANTE</option>
+                            <option>BANQUEIRO</option>
+                            <option>BARAO</option>
+                            <option>BARONESA</option>
+                            <option>BEATO PADRE</option>
+                            <option>BEM AVENTURADO</option>
+                            <option>BENEMERITO</option>
+                            <option>BISPO</option>
+                            <option>BRIGADEIRO</option>
+                            <option>CABO</option>
+                            <option>CABO PM</option>
+                            <option>CADETE</option>
+                            <option>CAMPEADOR</option>
+                            <option>CAPITAO</option>
+                            <option>CAPITAO ALMIRANTE</option>
+                            <option>CAPITAO DE FRAGATA</option>
+                            <option>CAPITAO DE MAR E GUERRA</option>
+                            <option>CAPITAO GENERAL</option>
+                            <option>CAPITAO MOR</option>
+                            <option>CAPITAO PM</option>
+                            <option>CAPITAO TENENTE</option>
+                            <option>CARDEAL</option>
+                            <option>CATEQUISTA</option>
+                            <option>CAVALEIRO</option>
+                            <option>CAVALHEIRO</option>
+                            <option>CINEASTA</option>
+                            <option>COMANDANTE</option>
+                            <option>COMEDIANTE</option>
+                            <option>COMENDADOR</option>
+                            <option>COMISSARIA</option>
+                            <option>COMISSARIO</option>
+                            <option>COMPOSITOR</option>
+                            <option>CONDE</option>
+                            <option>CONDESSA</option>
+                            <option>CONEGO</option>
+                            <option>CONFRADE</option>
+                            <option>CONSELHEIRO</option>
+                            <option>CONSUL</option>
+                            <option>CORONEL</option>
+                            <option>CORONEL PM</option>
+                            <option>CORREGEDOR</option>
+                            <option>DELEGADO</option>
+                            <option>DENTISTA</option>
+                            <option>DEPUTADA</option>
+                            <option>DEPUTADO</option>
+                            <option>DEPUTADO DOUTOR</option>
+                            <option>DESEMBARGADOR</option>
+                            <option>DIACO</option>
+                            <option>DOM</option>
+                            <option>DONA</option>
+                            <option>DOUTOR</option>
+                            <option>DOUTORA</option>
+                            <option>DUQUE</option>
+                            <option>DUQUESA</option>
+                            <option>EDITOR</option>
+                            <option>EDUCADOR</option>
+                            <option>EDUCADORA</option>
+                            <option>EMBAIXADOR</option>
+                            <option>EMBAIXADORA</option>
+                            <option>ENGENHEIRA</option>
+                            <option>ENGENHEIRO</option>
+                            <option>ESCOTEIRO</option>
+                            <option>ESCRAVO</option>
+                            <option>ESCRITOR</option>
+                            <option>EXPEDICIONARIO</option>
+                            <option>FISICO</option>
+                            <option>FREI</option>
+                            <option>GENERAL</option>
+                            <option>GOVERNADOR</option>
+                            <option>GRUMETE</option>
+                            <option>GUARDA CIVIL METROPOLITANO</option>
+                            <option>IMACULADA</option>
+                            <option>IMPERADOR</option>
+                            <option>IMPERATRIZ</option>
+                            <option>INFANTE</option>
+                            <option>INSPETOR</option>
+                            <option>IRMA</option>
+                            <option>IRMAO</option>
+                            <option>IRMAOS</option>
+                            <option>IRMAS</option>
+                            <option>JORNALISTA</option>
+                            <option>LIBERTADOR</option>
+                            <option>LIDCO</option>
+                            <option>LIVREIRO</option>
+                            <option>LORDE</option>
+                            <option>MADAME</option>
+                            <option>MADRE</option>
+                            <option>MAESTRO</option>
+                            <option>MAJOR</option>
+                            <option>MAJOR AVIADOR</option>
+                            <option>MAJOR BRIGADEIRO</option>
+                            <option>MAQUINISTA</option>
+                            <option>MARECHAL</option>
+                            <option>MARECHAL DO AR</option>
+                            <option>MARQUES</option>
+                            <option>MARQUESA</option>
+                            <option>MERE</option>
+                            <option>MESTRAS</option>
+                            <option>MESTRE</option>
+                            <option>MESTRES</option>
+                            <option>MILITANTE</option>
+                            <option>MINISTRO</option>
+                            <option>MISSIONARIA</option>
+                            <option>MISSIONARIO</option>
+                            <option>MONGE</option>
+                            <option>MONSENHOR</option>
+                            <option>MUNIC</option>
+                            <option>MUSICO</option>
+                            <option>NOSSA SENHORA</option>
+                            <option>NOSSO SENHOR</option>
+                            <option>OUVIDOR</option>
+                            <option>PADRE</option>
+                            <option>PADRES</option>
+                            <option>PAI</option>
+                            <option>PAPA</option>
+                            <option>PASTOR</option>
+                            <option>PATRIARCA</option>
+                            <option>POETA</option>
+                            <option>POETISA</option>
+                            <option>PREFEITO</option>
+                            <option>PRESIDENTE</option>
+                            <option>PRESIDENTE DA ACAD.BRAS.LETRAS</option>
+                            <option>PREVR</option>
+                            <option>PRIMEIRO SARGENTO</option>
+                            <option>PRIMEIRO SARGENTO PM</option>
+                            <option>PRIMEIRO TENENTE</option>
+                            <option>PRIMEIRO TENENTE PM</option>
+                            <option>PRINCESA</option>
+                            <option>PRINCIPE</option>
+                            <option>PROCURADOR</option>
+                            <option>PROFESSOR</option>
+                            <option>PROFESSOR DOUTOR</option>
+                            <option>PROFESSOR ENGENHEIRO</option>
+                            <option>PROFESSORA</option>
+                            <option>PROFETA</option>
+                            <option>PROMOTOR</option>
+                            <option>PROVEDOR</option>
+                            <option>PROVEDOR MOR</option>
+                            <option>RABINO</option>
+                            <option>RADIALISTA</option>
+                            <option>RAINHA</option>
+                            <option>REGENTE</option>
+                            <option>REI</option>
+                            <option>REVERENDO</option>
+                            <option>RUA</option>
+                            <option>SACERDOTE</option>
+                            <option>SANTA</option>
+                            <option>SANTO</option>
+                            <option>SAO</option>
+                            <option>SARGENTO</option>
+                            <option>SARGENTO MOR</option>
+                            <option>SARGENTO PM</option>
+                            <option>SEGUNDO SARGENTO</option>
+                            <option>SEGUNDO SARGENTO PM</option>
+                            <option>SEGUNDO TENENTE</option>
+                            <option>SENADOR</option>
+                            <option>SENHOR</option>
+                            <option>SENHORA</option>
+                            <option>SERTANISTA</option>
+                            <option>SINHA</option>
+                            <option>SIR</option>
+                            <option>SOCIOLOGO</option>
+                            <option>SOLDADO</option>
+                            <option>SOLDADO PM</option>
+                            <option>SOROR</option>
+                            <option>SUB TENENTE</option>
+                            <option>TENENTE</option>
+                            <option>TENENTE AVIADOR</option>
+                            <option>TENENTE BRIGADEIRO</option>
+                            <option>TENENTE CORONEL</option>
+                            <option>TENENTE CORONEL PM</option>
+                            <option>TEOLOGO</option>
+                            <option>TERCEIRO SARGENTO</option>
+                            <option>TERCEIRO SARGENTO PM</option>
+                            <option>TIA</option>
+                            <option>VEREADOR</option>
+                            <option>VICE ALMIRANTE</option>
+                            <option>VICE REI</option>
+                            <option>VIGARIO</option>
+                            <option>VISCONDE</option>
+                            <option>VISCONDESSA</option>
+                            <option>VOLUNTARIO</option>
+                          </select>
+                          <div class="invalid-feedback">
+                            Please provide a valid state.
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="mb-3">
+                        <label>Logradouro Antigo:</label>
+                        <h6>
+                          Preencher apenas com o nome principal do logradouro
+                          sem o título e sem preposição (de, dos, etc), sem
+                          acentuação e sem cedilha. Ex. para "Praça do
+                          Patriarca", escrever só "Patriarca"
+                        </h6>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id=""
+                          placeholder=""
+                        />
+                      </div>
+                      <div class="mb-3">
+                        <label>Número Antigo:</label>
+                        <h6>
+                          Se houver, ingressar o Número Antigo do endereço.
+                        </h6>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id=""
+                          placeholder=""
+                        />
+                      </div>
+
+                      <div class="mb-3 p-2 subtitulos">
+                        <h4>4. Ficha Técnica</h4>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-6 mb-3">
+                          <label for="state">Autor</label>
+                          <input
+                            type="text"
+                            class="form-control"
+                            id=""
+                            placeholder=""
+                          />
+                        </div>
+                        <div class="col-md-6 mb-3">
+                          <label for="state">Constructor</label>
+                          <input
+                            type="text"
+                            class="form-control"
+                            id=""
+                            placeholder=""
+                          />
+                        </div>
+                      </div>
+                      <div class="mb-3">
+                        <label>Período da Construção:</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id=""
+                          placeholder=""
+                        />
+                      </div>
+                      <div class="row">
+                        <div class="col-md-6 mb-3">
+                          <label for="state"
+                            >Estilo Arquitetônico Primário</label
+                          >
+                          <select class="custom-select d-block w-100">
+                            <option value="">Selecionar tipo...</option>
+                            <option>Art Deco</option>
+                            <option>Art Nouveau</option>
+                            <option>Bandeirista</option>
+                            <option>Colonial</option>
+                            <option>Eclético</option>
+                            <option>Moderno</option>
+                            <option>Neoclássico</option>
+                            <option>Neocolonial</option>
+                            <option>Neogótico</option>
+                          </select>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                          <label for="state"
+                            >Estilo Arquitetônico Secundário</label
+                          >
+                          <select class="custom-select d-block w-100" required>
+                            <option value="">Selecionar tipo...</option>
+                            <option>Art Deco</option>
+                            <option>Art Nouveau</option>
+                            <option>Bandeirista</option>
+                            <option>Colonial</option>
+                            <option>Eclético</option>
+                            <option>Moderno</option>
+                            <option>Neoclássico</option>
+                            <option>Neocolonial</option>
+                            <option>Neogótico</option>
+                          </select>
+                        </div>
+                      </div>
+
+                      <div class="mb-3">
+                        <label>Estilo Arquitetônico - Observações:</label>
+
+                        <textarea
+                          class="form-control"
+                          aria-label="With textarea"
+                          required
+                        ></textarea>
+                      </div>
+
+                      <div class="row">
+                        <div class="col-md-6 mb-3">
+                          <label for="state"
+                            >Técnica Construtiva - Primária</label
+                          >
+                          <select class="custom-select d-block w-100">
+                            <option value="">Selecionar tipo...</option>
+                            <option>Adobe</option>
+                            <option>Alvenaria de tijolos</option>
+                            <option>Concreto armado</option>
+                            <option>Taipa-de-mão | Pau-a-pique</option>
+                            <option>Taipa-de-pilão</option>
+                            <option>Técnica Mista</option>
+                          </select>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                          <label for="state"
+                            >Técnica Construtiva - Secundária</label
+                          >
+                          <select class="custom-select d-block w-100" required>
+                            <option value="">Selecionar tipo...</option>
+                            <option>Adobe</option>
+                            <option>Alvenaria de tijolos</option>
+                            <option>Concreto armado</option>
+                            <option>Taipa-de-mão | Pau-a-pique</option>
+                            <option>Taipa-de-pilão</option>
+                            <option>Técnica Mista</option>
+                          </select>
+                        </div>
+                      </div>
+
+                      <div class="mb-3">
+                        <label>Técnica Construtiva - Observações:</label>
+                        <textarea
+                          class="form-control"
+                          aria-label="With textarea"
+                          required
+                        ></textarea>
+                      </div>
+                      <div class="mb-3">
+                        <label>Número de Pavimentos:</label>
+                        <h6>
+                          Inserir apenas o número de pavimentos. Porão, Sótão,
+                          Alpendre, etc inserir no campo: Outras informações
+                        </h6>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id=""
+                          placeholder=""
+                        />
+                      </div>
+                      <div class="mb-3">
+                        <label>Outros:</label>
+                        <div class="row m-2">
+                          <div class="custom-control custom-checkbox mr-2">
+                            <input
+                              type="checkbox"
+                              class="custom-control-input"
+                              id="cb-terreo"
+                            />
+                            <label class="custom-control-label" for="cb-terreo"
+                              >Térreo</label
+                            >
+                          </div>
+                          <div class="custom-control custom-checkbox ml-2">
+                            <input
+                              type="checkbox"
+                              class="custom-control-input"
+                              id="cb-porao"
+                            />
+                            <label class="custom-control-label" for="cb-porao"
+                              >Porão</label
+                            >
+                          </div>
+                        </div>
+                      </div>
+                      <div class="mb-3">
+                        <label>Observações (pavimentos):</label>
+                        <textarea
+                          class="form-control"
+                          aria-label="With textarea"
+                          required
+                        ></textarea>
+                      </div>
+
+                      <div class="mb-3 p-2 subtitulos">
+                        <h4>5. Descrição</h4>
+                      </div>
+                      <div class="mb-3">
+                        <label>Informações Históricas:</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id=""
+                          placeholder=""
+                        />
+                      </div>
+                      <div class="mb-3">
+                        <label>Análise Arquitetônica:</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id=""
+                          placeholder=""
+                        />
+                      </div>
+                      <div class="mb-3">
+                        <label>Ambiência:</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id=""
+                          placeholder=""
+                        />
+                      </div>
+                      <div class="mb-3">
+                        <label>Outras Informações:</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id=""
+                          placeholder=""
+                        />
+                      </div>
+                      <div class="mb-3">
+                        <label>Grau de Tombamento:</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id=""
+                          placeholder=""
+                        />
+                      </div>
+                      <div class="mb-3">
+                        <label for="state">Estado de Preservação</label>
+                        <h6>
+                          Selecionar alternativa que melhor descreva o estado de
+                          preservação do bem, ou seja, se ele mantém suas
+                          características de estilo e ambiência preservadas.
+                        </h6>
+                        <select class="custom-select d-block w-100">
+                          <option value="">Selecionar tipo...</option>
+                          <option>Bom</option>
+                          <option>Regular</option>
+                          <option>Precario</option>
+                        </select>
+                      </div>
+
+                      <div class="mb-3">
+                        <label>Descrição do Estado de Preservação:</label>
+                        <h6>
+                          Inserir breve descrição quando houver informações
+                          relevantes sobre o assunto
+                        </h6>
+                        <textarea
+                          class="form-control"
+                          aria-label="With textarea"
+                          required
+                        ></textarea>
+                      </div>
+
+                      <div class="mb-3">
+                        <label for="state">Estado de Conservação</label>
+                        <h6>
+                          Selecionar alternativa que melhor descreva o estado de
+                          preservação do bem, ou seja, se ele mantém suas
+                          características de estilo e ambiência preservadas.
+                        </h6>
+                        <select class="custom-select d-block w-100">
+                          <option value="">Selecionar tipo...</option>
+                          <option>Bom</option>
+                          <option>Regular</option>
+                          <option>Precario</option>
+                        </select>
+                      </div>
+
+                      <div class="mb-3">
+                        <label>Descrição do Estado de Conservação:</label>
+                        <h6>
+                          Inserir breve descrição quando houver informações
+                          relevantes sobre o assunto
+                        </h6>
+                        <textarea
+                          class="form-control"
+                          aria-label="With textarea"
+                          required
+                        ></textarea>
+                      </div>
+                      <div class="mb-3">
+                        <label>Fontes Bibliográficas e Base de Dados</label>
+                        <h6>
+                          Inserir fontes bibliográficas e das imagens
+                          utilizadas. Formato ABNT. Ferramenta para formatação
+                          de referências em formato
+                          <a
+                            href="http://referencia.clevert.com.br/?page=refBib"
+                            >ABNT (click here)</a
+                          >
+                        </h6>
+                        <textarea
+                          class="form-control"
+                          aria-label="With textarea"
+                          required
+                        ></textarea>
+                      </div>
+
+                      <div class="mb-3 p-2 subtitulos">
+                        <h4>6. Levantamento Fotográficoo</h4>
+                      </div>
+
+                      <div class="mb-3">
+                        <label>Carregar Imagens:</label>
+                        <h6>
+                          Imagens em formato JPG com um máximo de 10 mb por
+                          imagem
+                        </h6>
+                        <div class="input-group mb-3">
+                          <div class="custom-file">
+                            <input
+                              type="file"
+                              class="custom-file-input"
+                              id="inputGroupFile02"
+                            />
+                            <label
+                              class="custom-file-label"
+                              for="inputGroupFile02"
+                              >Pesquisar imagen</label
+                            >
+                          </div>
+                          <div class="input-group-append">
+                            <span class="input-group-text" id="">Carregar</span>
+                          </div>
+                        </div>
+                      </div>
+
+                      <hr class="mb-4" />
+
+                      <div class="row justify-content-center">
+                        <button
+                          type="button"
+                          class="btn btn-primary btn-lg m-2 col-md-3"
+                        >
+                          <i class="fa fa-times" aria-hidden="true"></i>
+                          Cancelar
+                        </button>
+                        <button
+                          type="button"
+                          class="btn btn-info btn-lg m-2 col-md-3"
+                        >
+                          <i class="fa fa-floppy-o" aria-hidden="true"></i>
+                          Guardar
+                        </button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Large modal -->
+    <div
+      class="modal fade pruebaModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="myLargeModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="text-dark">MODAL PRUEBA</h3>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p class="text-dark">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+              Similique id magni at laudantium magnam dolore accusamus, nam
+              dicta quo quis molestiae sapiente? Voluptatibus sint culpa eius
+              laborum nulla numquam recusandae.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Usuario Modal -->
+    <div
+      class="modal fade"
+      id="usuario-modal"
+      data-backdrop="static"
+      data-keyboard="false"
+      tabindex="-1"
+      aria-labelledby="staticBackdropLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">...</div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="button" class="btn btn-primary">Understood</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="footer-content">
+        <a class="" href="#">
+          <img
+            src="img/logo_1.png"
+            width="40"
+            height="40"
+            class="justify-content-center align-items-center"
+            alt=""
+          />
+          CONPRESP
+        </a>
+        <ul class="socials">
+          <li>
+            <a href="https://www.facebook.com/preservalpp" target="_blank"
+              ><i class="fa fa-facebook" aria-hidden="true"></i
+            ></a>
+          </li>
+          <li>
+            <a href="https://www.instagram.com/preserva.lpp/" target="_blank"
+              ><i class="fa fa-instagram" aria-hidden="true"></i
+            ></a>
+          </li>
+          <li>
+            <a
+              href="https://www.youtube.com/channel/UCM0unl5Kp9y0JVmO_GgvvBg "
+              target="_blank"
+              ><i class="fa fa-youtube" aria-hidden="true"></i
+            ></a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer-bottom">
+        <p>
+          copyright &copy;2020 anhembi. desing by
+          <a href="https://github.com/JhordanJulcamoro" target="_blank"
+            >@JhordanJulcamoro</a
+          >
+        </p>
+      </div>
+    </footer>
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- FIREBASE SCRIPTS -->
+    <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-functions.js"></script>
+
+    <!-- FILE APP SCRIPTS -->
+    <script src="js/config/firebase.config.js"></script>
+    <script src="js/services/auth.loged.js"></script>
+    <script src="js/global/declarations.js"></script>
+    <script src="js/services/auth.service.js"></script>
+    <script src="js/utils/editar_conpresp.js"></script>
+  </body>
+</html>
