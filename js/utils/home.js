@@ -24,10 +24,10 @@ var table = $("#tablaHome").DataTable({
 $("#tablaHome").on("click", ".btnEditar", function () {
   filaEditada = table.row($(this).parents("tr"));
   let fila = $("#tablaHome").dataTable().fnGetData($(this).closest("tr"));
-  let id_conpresp = fila[0];
-  localStorage.setItem("key", id_conpresp);
-  console.log("Editando " + id_conpresp);
-  location.href = "doc_conpresp.html";
+  let uid_prenchimento = fila[0];
+  let id_conpresp = fila[1];
+  localStorage.setItem("key", uid_prenchimento);
+  location.href = "doc_conpresp.html?edit=" + id_conpresp;
 });
 
 $("#tablaHome").on("click", ".btnVer", function () {

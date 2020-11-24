@@ -4,9 +4,11 @@ const btnVerificarEmail = document.querySelector("#btnVerificarEmail");
 const btnLogout = document.querySelector(".btnLogout");
 const agregarUsuarioForm = document.querySelector("#agregarUsuarioModal");
 const tbodyList = document.querySelector("#tbodyList");
-
+const h1TituloCadastro = document.querySelector(".nombre-titulo");
+const h6SubtituloCadastro = document.querySelector(".nombre-subtitulo");
 //DECLARE VARIABLES FOR DATABASE-FIRESTORE
 let name_table_db = "conpresp_v1";
+let name_table_db2 = "conpresp_v2";
 
 // ICONS FOR USING IN TABLE
 const iconoVer = "<i class='fas fa-eye'></i>";
