@@ -1,3 +1,47 @@
+$(document).ready(function () {
+  listarDatosTabla();
+});
+
+var table = $("#tablaHome").DataTable({
+  pageLength: 5,
+  lengthMenu: [
+    [5, 10, 20, -1],
+    [5, 10, 20, "Todos"],
+  ],
+  data: dataSet,
+  columnDefs: [
+    {
+      targets: [0],
+      visible: false, //ocultamos la columna de ID que es la [0]
+    },
+    {
+      targets: -1,
+      defaultContent: content_buttons,
+    },
+  ],
+});
+
+$("#tablaHome").on("click", ".btnEditar", function () {
+  filaEditada = table.row($(this).parents("tr"));
+  let fila = $("#tablaHome").dataTable().fnGetData($(this).closest("tr"));
+  let uid_prenchimento = fila[0];
+  let id_conpresp = fila[1];
+  localStorage.setItem("key", uid_prenchimento);
+  location.href = "doc_conpresp.html?edit=" + id_conpresp;
+});
+
+$("#tablaHome").on("click", ".btnVer", function () {
+  let fila = $("#tablaHome").dataTable().fnGetData($(this).closest("tr"));
+  let id_conpresp = fila[0];
+  console.log("Ver doc " + id_conpresp);
+});
+
+$("#tablaHome").on("click", ".btnPdf", function () {
+  let fila = $("#tablaHome").dataTable().fnGetData($(this).closest("tr"));
+  let id_conpresp = fila[0];
+  console.log("Gerar pdf " + id_conpresp);
+});
+
 btnLogout.addEventListener("click", (e) => {
   e.preventDefault();
   logoutUsuario();

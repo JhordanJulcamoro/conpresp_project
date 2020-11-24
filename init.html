@@ -73,113 +73,22 @@
       </div>
     </nav>
 
-    <div class="container">
-      <button
-        type="button"
-        class="btn btn-info"
-        data-toggle="modal"
-        data-target="#agregarUsuarioModal"
-      >
-        AGREGAR USUARIO
-      </button>
-      <table class="table">
-        <thead class="thead-dark">
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">Email</th>
-            <th scope="col">Nomes</th>
-            <th scope="col">Rol</th>
-            <th scope="col">Estado</th>
-            <th scope="col"></th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>jhordanjulcamoro@gmail.com</td>
-            <td>Jhordan Julcamoro</td>
-            <td>administrador</td>
-            <td>activo</td>
-            <td><a href="">editar</a>|<a href="">eliminar</a></td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>prueba@prueba.com</td>
-            <td>Conpresp Prueba</td>
-            <td>estándar</td>
-            <td>inactivo</td>
-            <td><a href="">editar</a>|<a href="">eliminar</a></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <!-- Modal Agregar Usuario-->
-    <div
-      class="modal fade"
-      id="agregarUsuarioModal"
-      tabindex="-1"
-      role="dialog"
-      aria-labelledby="exampleModalLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h3>AGREGAR USUARIO</h3>
-            <button
-              type="button"
-              class="close"
-              data-dismiss="modal"
-              aria-label="Close"
-            >
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <form id="agregarUsuarioForm">
-              <div class="form-group">
-                <input
-                  type="text"
-                  id="agregarUsuarioName"
-                  class="form-control"
-                  placeholder="Nome"
-                  required
-                />
-              </div>
-              <div class="form-group">
-                <input
-                  type="email"
-                  id="agregarUsuarioEmail"
-                  class="form-control"
-                  placeholder="Email"
-                  required
-                />
-              </div>
-              <div class="form-group">
-                <input
-                  type="password"
-                  id="agregarUsuarioPassword"
-                  class="form-control"
-                  placeholder="Senha"
-                  required
-                />
-              </div>
-              <div class="form-group">
-                <select
-                  class="custom-select"
-                  id="agregarUsuarioSelect"
-                  required
-                >
-                  <option value="estandar" selected>Estandar</option>
-                  <option value="administrador">Administrador</option>
-                  <option value="invitado">Invitado</option>
-                </select>
-              </div>
-              <button type="submit" class="btn btn-primary">Agregar</button>
-            </form>
-          </div>
-        </div>
+    <div class="container p-5">
+      <h4 class="text-center">BEM-VINDO: <span> USUARIO</span></h4>
+      <div class="col-sm-12 text-center">
+        <button type="button" class="btn btn-warning" id="btnRegistro">
+          CADASTRAR
+        </button>
+        <button type="button" class="btn btn-info" id="btnEditar">
+          ALTERAR
+        </button>
+        <button type="button" class="btn btn-danger" id="btnDeletar">
+          EXCLUIR
+        </button>
+        <button type="button" class="btn btn-dark" id="btnPesquisar">
+          PESQUISAR
+        </button>
+        <!-- <button class="btn btn-dark" id="btnRegistrar">Registrar</button> -->
       </div>
     </div>
 
@@ -203,10 +112,9 @@
 
     <!-- FILE APP SCRIPTS -->
     <script src="js/config/firebase.config.js"></script>
-    <script src="js/global/declarations.js"></script>
     <script src="js/services/auth.loged.js"></script>
+    <script src="js/global/declarations.js"></script>
     <script src="js/services/auth.service.js"></script>
     <script src="js/utils/home.js"></script>
-    <script src="js/utils/usuarios.js"></script>
   </body>
 </html>
